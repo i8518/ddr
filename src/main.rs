@@ -31,7 +31,10 @@ fn main() {
         winapi::um::shellscalingapi::SetProcessDpiAwareness(2);
     }
     if let Some(args) = crate::core_main::core_main().as_mut() {
-        ui::start(args);
+        // 👇 关键修改：注释UI启动函数，阻止窗口创建/显示
+        // ui::start(args); 
+        // （可选）添加日志确认逻辑生效
+        hbb_common::log::info!("UI window startup skipped (prevented by modification)");
     }
     common::global_clean();
 }
