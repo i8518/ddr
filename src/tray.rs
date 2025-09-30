@@ -29,11 +29,7 @@ pub fn start_tray() {
 }
 
 fn make_tray() -> hbb_common::ResultType<()> {
-    //关键修改： 直接返回成功，不创建托盘、不启动事件循环
-    Ok(())
-    // 以下为原代码，全部删除或注释（因已提前返回，不会执行）
-    /*
-    // https://github.com/tauri-apps/tray-icon/blob/dev/examples/tao.rs
+   https://github.com/tauri-apps/tray-icon/blob/dev/examples/tao.rs
     use hbb_common::anyhow::Context;
     use tao::event_loop::{ControlFlow, EventLoopBuilder};
     use tray_icon::{
